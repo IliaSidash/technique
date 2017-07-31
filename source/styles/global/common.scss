@@ -1,3 +1,7 @@
 .wrapper{
   @include wrapper();
 }
+
+html{
+  font-family: $regular;
+}
