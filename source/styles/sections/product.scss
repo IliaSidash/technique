@@ -1,0 +1,82 @@
+.product{
+
+  &-container{
+    @include row-flex();
+    border-bottom: 2px solid #818180;
+    padding-bottom: 45px;
+  }
+
+  &-left{
+    @include col();
+    @include col-4();
+  }
+
+  &-right{
+    @include col();
+    @include col-8();
+
+    &__title{
+      font-size: 20px;
+      font-family: $bold;
+      margin-bottom: 35px;
+    }
+
+    &__item {
+      font-size: 24px;
+      font-family: $bold;
+      padding: 9px 0 9px 20px;
+      box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.35);
+      border-radius: 3px;
+      border: 1px solid #cdcdcd;
+      background-color: #ffffff;
+      margin-bottom: 31px;
+    }
+
+    &-char{
+      display: block;
+      margin-bottom: 15px;
+      font-size: 16px;
+
+      &:last-child{
+        margin-bottom: 21px;
+      }
+
+    }
+
+
+  &__accord {
+    display: none;
+    &_show {
+      display: block;
+    }
+  }
+  &__price{
+    display: inline-block;
+    font-family: $bold;
+    font-size: 24px;
+    margin-right: 53px;
+    vertical-align: middle;
+  }
+
+  &__btn{
+    padding: 12px 39px 11px 40px;
+    font-size: 12px;
+    text-decoration: underline;
+    text-transform: uppercase;
+    color: #000;
+    box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.35);
+    border-radius: 3px;
+    border: 1px solid #fab500;
+    border: 2px solid #fdce03;
+    background-color: #000000;
+    background: linear-gradient(to top, #fab500 0%, #fdcf03 100%);
+    box-sizing: border-box;
+
+    &:hover{
+      background: linear-gradient(to top, #fab000 0%, #fdc000 100%);
+    }
+  }
+
+  }
+}
+

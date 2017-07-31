@@ -13,8 +13,9 @@
 
   &-menu{
     @include col();
-    @include col-9();
-    &__item{
+    @include col-10();
+
+    &__link{
       text-transform: uppercase;
       text-decoration: none;
       font-size: 14px;
@@ -23,7 +24,7 @@
       &:hover{
         color: #010101;
       }
-      
+
 
     }
   }

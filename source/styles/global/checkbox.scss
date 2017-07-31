@@ -1,0 +1,31 @@
+.checkbox {
+  display: none;
+
+}
+
+.checkbox-custom {
+  position: relative;
+  width: 26px;
+  height: 26px;
+  border: 2px solid #000000;
+  margin-right: 21px;
+}
+
+.checkbox-custom,
+.label {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.checkbox:checked + .checkbox-custom::before {
+  content: "";
+  display: block;
+  position: absolute;
+
+  top: 5px;
+  right: 5px;
+  bottom: 5px;
+  left: 5px;
+
+  background: #000000;
+}

@@ -1,0 +1,31 @@
+.breadcrumbs{
+  padding: 45px 0 65px;
+  &-nav{
+    &__link{
+      width: 173px;
+      height: 11px;
+      font-family: "PT Sans";
+      font-size: 12px;
+      font-weight: 400;
+      text-decoration: none;
+      color: #ffb802;
+
+      &:after{
+        content: ' / ';
+      }
+
+      &:last-child{
+        &:after{
+            content: '';
+        }
+      }
+
+      &_active{
+        color: #000;
+      }
+
+
+
+    }
+  }
+}

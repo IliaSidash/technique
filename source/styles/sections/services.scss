@@ -1,0 +1,39 @@
+.services-top{
+  padding: 49px 0 19px;
+  &__title{
+    text-align: center;
+    font-family: $bold;
+    font-size: 24px;
+  }
+}
+
+.services-bottom{
+  background: $yellow;
+  &-list{
+    @include row-flex();
+    padding: 48px 0 55px;
+  }
+
+  &-item{
+    @include col();
+    @include col-6();
+    margin-bottom: 71px;
+    
+    &__img{
+      float: left;
+      margin-right:49px;
+    }
+
+    &__title{
+      font-family: $bold;
+      font-size: 20px;
+      margin-bottom: 34px;
+    }
+
+    &__desc{
+      font-size: 14px;
+      line-height: 24px;
+    }
+  }
+
+}
