@@ -1,0 +1,48 @@
+.todolist{
+  padding: 64px 0 101px;
+
+  &__title{
+    font-family: $bold;
+    font-size: 24px;
+    text-transform: uppercase;
+    margin-bottom: 34px;
+  }
+  &-list{
+    &__item{
+      font-family: $bold;
+      font-size: 24px;
+      margin-bottom: 30px;
+      i{
+        margin-left: 35px;
+        cursor: pointer;
+      }
+    }
+  }
+  &-add{
+    .add{
+      font-size: 24px;
+      margin-right: 30px;
+      vertical-align: middle;
+      cursor: pointer;
+    }
+  }
+  &-widjet{
+    display: none;
+    &__input{
+      width: 536px;
+      height: 40px;
+      box-shadow: inset 2px 3px 7px rgba(0, 0, 0, 0.35);
+      border-radius: 5px;
+      border: 1px solid #535353;
+      background-color: #ffffff;
+    }
+    &__btn{
+      i{
+        font-size: 24px;
+        margin-left: 25px;
+        cursor: pointer;
+      }
+    }
+  }
+
+}
