@@ -3,30 +3,49 @@
   background: $yellow;
 
   &-container{
-    @include row-flex();
+    display: flex;
+    justify-content: space-between;
+
+    @media (max-width: 590px){
+      flex-direction: column;
+      align-items: center;
+    }
   }
 
   &__logo{
-    @include col();
+    flex-basis: 146px;
+    margin-right: 17px;
 
+    @media (max-width: 590px){
+      flex-basis: auto;
+      margin-right: 0;
+      margin-bottom: 15px;
+    }
   }
 
   &__title{
-    @include col();
-    @include col-3();
+    flex-basis: 160px;
     align-self: center;
     font-family: $bold;
     font-size: 14px;
     line-height: 24px;
+
+    @media (max-width: 590px){
+      flex-basis: auto;
+      margin-right: 0;
+      margin-bottom: 15px;
+    }
   }
 
   &__address{
-    @include col();
-    @include col-4();
+    flex-grow: 2;
     align-self: center;
     font-size: 14px;
     text-align: right;
-    flex-grow: 1;
 
+    @media (max-width: 590px){
+      flex-basis: auto;
+      text-align: center;
+    }
   }
 }

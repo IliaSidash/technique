@@ -35,6 +35,10 @@
       border-radius: 5px;
       border: 1px solid #535353;
       background-color: #ffffff;
+
+      @media (max-width: 750px){
+        width: 300px;
+      }
     }
     &__btn{
       i{

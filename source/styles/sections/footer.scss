@@ -6,24 +6,45 @@
   font-size: 14px;
 
   &-container{
-    @include row-flex();
+    display: flex;
+    flex-wrap: wrap;
     align-items: center;
+    @media (max-width: 710px){
+      flex-direction: column;
+    }
+
   }
 
   &__logo{
-    @include col();
-    @include col-3();
+    flex-basis: 147px;
+    margin-right:95px;
+    @media (max-width: 800px){
+      margin-right:40px;
+    }
+    @media (max-width: 710px){
+      flex-basis: 0;
+      margin-right: 0;
+      margin-bottom: 20px;
+    }
   }
 
   &-nav{
-    @include col();
-    @include col-5();
+    flex-basis: 360px;
+    @media (max-width: 710px){
+      flex-basis: 0;
+      text-align: center;
+      margin-bottom: 20px;
+    }
 
     &__link{
       color: #818180;
       margin-right: 30px;
       line-height: 30px;
       text-decoration: none;
+
+      &:nth-child(3n){
+        margin-right: 0px;
+      }
       &:hover{
         color: #d3d3d3;
 
@@ -33,13 +54,18 @@
           margin-right: 8px;
         }
       }
+
+    @media (max-width: 370px){
+      display: block;
+      margin-right: 0;
+    }
+
     }
   }
 
   &-right{
-    @include col();
-    @include col-4();
     text-align: right;
+    flex-grow: 2;
 
     &-top{
       margin-bottom: 26px;

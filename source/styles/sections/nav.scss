@@ -2,18 +2,23 @@
   padding: 8px 0;
 
   &-container{
-    @include row-flex();
+    display: flex;
     align-items: center;
+
+    @media (max-width: 825px){
+      flex-direction: column;
+      text-align: center;
+    }
   }
 
   &-logo{
-    @include col();
-    @include col-1();
+    margin-right: 51px;
+    @media (max-width: 825px){
+      margin-right: 0px;
+    }
   }
 
   &-menu{
-    @include col();
-    @include col-10();
 
     &__link{
       text-transform: uppercase;
@@ -24,7 +29,11 @@
       &:hover{
         color: #010101;
       }
-
+      @media (max-width: 710px){
+        display: block;
+        text-align: center;
+        margin-right: 0;
+      }
 
     }
   }

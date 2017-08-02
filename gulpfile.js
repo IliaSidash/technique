@@ -7,6 +7,9 @@ const rimraf = require('rimraf');
 const rename = require('gulp-rename');
 const smartgrid = require('smart-grid');
 const gcmq = require('gulp-group-css-media-queries');
+const uglify = require('gulp-uglify');
+const concat = require('gulp-concat');
+const sourcemaps = require('gulp-sourcemaps');
 
 /* -------- Server  -------- */
 gulp.task('server', function() {
@@ -82,6 +85,7 @@ gulp.task('copy', gulp.parallel('copy:fonts', 'copy:images'));
 gulp.task('watch', function() {
     gulp.watch('source/template/**/*.pug', gulp.series('templates:compile'));
     gulp.watch('source/styles/**/*.scss', gulp.series('styles:compile'));
+    gulp.watch('source/js/**/*.js', gulp.series('js'));
 });
 
 /* ------------ Group media queries images ------------- */
@@ -91,9 +95,29 @@ gulp.task('group', function () {
         .pipe(gulp.dest('build/css/'));
 });
 
+
+
+/* ------------ js ------------- */
+gulp.task('js', function () {
+    return gulp.src([
+        'node_modules/jquery/dist/jquery.min.js',
+        'node_modules/slick-carousel/slick/slick.min.js',
+        'source/js/google.maps.js',
+        'source/js/accordion.js',
+        'source/js/todolist.js',
+        'source/js/map.js',
+        'source/js/main.js'
+    ])
+        .pipe(sourcemaps.init())
+        .pipe(concat('main.min.js'))
+        .pipe(uglify())
+        .pipe(sourcemaps.write())
+        .pipe(gulp.dest('build/js'));
+});
+
 gulp.task('default', gulp.series(
     'clean',
-    gulp.parallel('templates:compile', 'styles:compile', 'sprite', 'copy'),
+    gulp.parallel('templates:compile', 'styles:compile', 'js', 'sprite', 'copy'),
     gulp.parallel('watch', 'server')
     )
 );
