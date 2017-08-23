@@ -10,6 +10,7 @@ const gcmq = require('gulp-group-css-media-queries');
 const uglify = require('gulp-uglify');
 const concat = require('gulp-concat');
 const sourcemaps = require('gulp-sourcemaps');
+const autoprefixer = require('gulp-autoprefixer');
 
 /* -------- Server  -------- */
 gulp.task('server', function() {
@@ -45,6 +46,10 @@ gulp.task('styles:compile', function () {
         .pipe(sass().on('error', sass.logError))
         .pipe(rename('main.css'))
         .pipe(gcmq())
+		.pipe(autoprefixer({
+                browsers: ['> 0.1%'],
+                cascade: false
+            }))
         .pipe(gulp.dest('build/css'));
 });
 
@@ -96,13 +101,12 @@ gulp.task('group', function () {
 });
 
 
-
 /* ------------ js ------------- */
 gulp.task('js', function () {
     return gulp.src([
         'node_modules/jquery/dist/jquery.min.js',
-        'node_modules/slick-carousel/slick/slick.min.js',
-        'source/js/google.maps.js',
+        'source/js/slick.min.js',
+        'source/js/slider.js',
         'source/js/accordion.js',
         'source/js/todolist.js',
         'source/js/map.js',

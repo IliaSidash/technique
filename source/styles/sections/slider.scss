@@ -1,0 +1,61 @@
+.slider{
+  position: relative;
+
+  img{
+    width:100%;
+  }
+}
+
+.slide{
+  position: relative;
+
+  &__desc{
+    position: absolute;
+    font-family: $bold;
+    top: 30px;
+    right: 37%;
+    width: 265px;
+    color: #000000;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 24px;
+  }
+
+  &__price{
+    color: #ffffff;
+    font-size: 60px;
+    vertical-align: -35px;
+    margin-left: 24px;
+  }
+
+  &__units{
+    color: #000000;
+    font-size: 24px;
+    text-align: right;
+    margin-top: 15px;
+  }
+}
+
+.buttons{
+  &__next{
+    @include sprite($next);
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+
+  }
+
+  &__prev{
+    @include sprite($prev);
+    position: absolute;
+    bottom: 30px;
+    right: 50%;
+  }
+
+}
+
+.dots{
+  width: 15px;
+  height: 15px;
+  background: #000;
+}

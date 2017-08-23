@@ -1,6 +1,5 @@
 const smartgrid = require('smart-grid');
 
-/* ------------ Smart-grid ------------- */
 var settings = {
     outputStyle: 'scss', /* less || scss || sass || styl */
     columns: 12, /* number of grid columns */
@@ -35,6 +34,10 @@ var settings = {
         }
         */
     }
+	
+	/*properties: [
+        'justify-content'
+    ]*/
 };
 
 smartgrid('source/styles/global', settings);

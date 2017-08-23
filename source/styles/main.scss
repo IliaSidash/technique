@@ -1,7 +1,5 @@
 @import "../../node_modules/font-awesome/scss/font-awesome";
-@import "../../node_modules/slick-carousel/slick/slick.css";
 @import "../../node_modules/normalize.css/normalize";
-
 
 
 @import "global/vars";
@@ -11,6 +9,10 @@
 @import "global/sprite";
 @import "global/fonts";
 @import "global/checkbox";
+@import "global/slick";
+@import "global/slick-theme";
+
+
 
 @import "sections/header";
 @import "sections/nav";
